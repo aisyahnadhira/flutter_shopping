@@ -23,7 +23,11 @@ class HomePage extends StatelessWidget {
           itemCount: items.length,
           itemBuilder: (context, index) {
             final item = items[index];
-            return Card(
+            return InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/item', arguments: item);
+              
+              },
               child: Container(
                 margin: EdgeInsets.all(8),
                 child: Row(
